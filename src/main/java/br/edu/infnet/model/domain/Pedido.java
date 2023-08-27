@@ -64,7 +64,7 @@ public class Pedido {
                                 "\n    Preco: " + prod.calculaPreco() + "\n")
                 .collect(Collectors.toList());
 
-        return "#####Pedido#####" +
+        return "\n########################Pedido########################" +
                 "\nInformacoes do cliente:" +
                 "\n--Nome: " + cliente.getNome() +
                 "\n--Email: " + cliente.getEmail() +

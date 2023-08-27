@@ -1,14 +1,19 @@
 package br.edu.infnet.model.domain;
 
 import br.edu.infnet.model.enums.TamanhoBebida;
+import br.edu.infnet.model.exceptions.BebidaGeladaPequenaException;
 
 public class Bebida extends Produto{
     private boolean gelada;
     private TamanhoBebida tamanho;
     private String marca;
 
-    public Bebida(String nome, double valor, int codigo, boolean gelada, TamanhoBebida tamanho, String marca) {
+    public Bebida(String nome, double valor, int codigo, boolean gelada, TamanhoBebida tamanho, String marca) throws BebidaGeladaPequenaException {
         super(nome, valor, codigo);
+
+        if(gelada && (tamanho != TamanhoBebida.GARRAFA_2L)) {
+            throw new BebidaGeladaPequenaException("A bebida para ser gelada deve ser tamanho 2L");
+        }
         this.gelada = gelada;
         this.tamanho = tamanho;
         this.marca = marca;

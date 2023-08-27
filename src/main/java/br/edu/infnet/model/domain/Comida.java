@@ -1,23 +1,30 @@
 package br.edu.infnet.model.domain;
 
-public class Comida extends Produto{
-    private double peso;
-    private boolean vegano;
-    private String ingredientes;
+import br.edu.infnet.model.exceptions.PesoNegativoException;
 
-    public Comida(String nome, double valor, int codigo, double peso, boolean vegano, String ingredientes) {
+public class Comida extends Produto{
+    private double pesoEmKg;
+    private boolean vegano;
+    private String[] ingredientes;
+
+    public Comida(String nome, double valor, int codigo, double pesoEmKg, boolean vegano, String[] ingredientes) throws PesoNegativoException {
         super(nome, valor, codigo);
-        this.peso = peso;
+
+        if(pesoEmKg <= 0) {
+            throw new PesoNegativoException("O peso deve ser positivo.");
+        }
+
+        this.pesoEmKg = pesoEmKg;
         this.vegano = vegano;
         this.ingredientes = ingredientes;
     }
 
-    public double getPeso() {
-        return peso;
+    public double getPesoEmKg() {
+        return pesoEmKg;
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
+    public void setPesoEmKg(double pesoEmKg) {
+        this.pesoEmKg = pesoEmKg;
     }
 
     public boolean isVegano() {
@@ -28,17 +35,17 @@ public class Comida extends Produto{
         this.vegano = vegano;
     }
 
-    public String getIngredientes() {
+    public String[] getIngredientes() {
         return ingredientes;
     }
 
-    public void setIngredientes(String ingredientes) {
+    public void setIngredientes(String[] ingredientes) {
         this.ingredientes = ingredientes;
     }
 
     @Override
     public double calculaDesconto() {
-        if(isVegano() && getPeso() >= 1) {
+        if(isVegano() && getPesoEmKg() >= 1) {
             return getValor() * 0.2;
         }
         return 0;
@@ -46,13 +53,13 @@ public class Comida extends Produto{
 
     @Override
     public double calculaPreco() {
-        return  getValor()- calculaDesconto();
+        return  (getValor() * getPesoEmKg())- calculaDesconto();
     }
 
     @Override
     public String toString() {
         return "Comida{" +
-                "peso=" + peso +
+                "peso=" + pesoEmKg +
                 ", vegano=" + vegano +
                 ", ingredientes='" + ingredientes + '\'' +
                 '}';
