@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Pedido {
-    private List<Produto> produtos;
+    private final List<Produto> produtos;
     private TipoEntrega tipoEntrega;
-    private boolean app;
+    private final boolean app;
     private final Cliente cliente;
 
     public Pedido(List<Produto> produtos, TipoEntrega tipoEntrega, boolean app, Cliente cliente) {

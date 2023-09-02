@@ -5,9 +5,9 @@ import br.edu.infnet.model.exceptions.QuantidadeSobremesaZeroException;
 import java.util.Set;
 
 public class Sobremesa extends Produto {
-    private int quantidade;
-    private boolean doce;
-    private Set<String> informacao;
+    private final int quantidade;
+    private final boolean doce;
+    private final Set<String> informacao;
 
     public Sobremesa(String nome, double valor, int codigo, int quantidade, boolean doce, Set<String> informacao) throws QuantidadeSobremesaZeroException {
         super(nome, valor, codigo);

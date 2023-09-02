@@ -3,9 +3,9 @@ package br.edu.infnet.model.domain;
 import br.edu.infnet.model.exceptions.DadosPessoaisNulosException;
 
 public class Cliente {
-    private String nome;
-    private String email;
-    private String cpf;
+    private final String nome;
+    private final String email;
+    private final String cpf;
 
     public Cliente(String nome, String email, String cpf) throws DadosPessoaisNulosException {
         if(nome.isEmpty()) {

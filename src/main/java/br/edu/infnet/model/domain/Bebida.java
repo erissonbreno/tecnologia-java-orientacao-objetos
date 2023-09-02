@@ -4,9 +4,9 @@ import br.edu.infnet.model.enums.TamanhoBebida;
 import br.edu.infnet.model.exceptions.BebidaGeladaPequenaException;
 
 public class Bebida extends Produto{
-    private boolean gelada;
-    private TamanhoBebida tamanho;
-    private String marca;
+    private final boolean gelada;
+    private final TamanhoBebida tamanho;
+    private final String marca;
 
     public Bebida(String nome, double valor, int codigo, boolean gelada, TamanhoBebida tamanho, String marca) throws BebidaGeladaPequenaException {
         super(nome, valor, codigo);

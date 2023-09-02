@@ -1,9 +1,9 @@
 package br.edu.infnet.model.domain;
 
 public abstract class Produto {
-    private String nome;
-    private double valor;
-    private int codigo;
+    private final String nome;
+    private final double valor;
+    private final int codigo;
 
     public Produto(String nome, double valor, int codigo) {
         this.nome = nome;
