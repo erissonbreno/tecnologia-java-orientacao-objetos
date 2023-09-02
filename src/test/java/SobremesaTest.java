@@ -1,6 +1,5 @@
 import br.edu.infnet.model.domain.Sobremesa;
 import br.edu.infnet.model.exceptions.QuantidadeSobremesaZeroException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;

@@ -9,7 +9,7 @@ public class Pedido {
     private List<Produto> produtos;
     private TipoEntrega tipoEntrega;
     private boolean app;
-    private Cliente cliente;
+    private final Cliente cliente;
 
     public Pedido(List<Produto> produtos, TipoEntrega tipoEntrega, boolean app, Cliente cliente) {
         this.produtos = produtos;

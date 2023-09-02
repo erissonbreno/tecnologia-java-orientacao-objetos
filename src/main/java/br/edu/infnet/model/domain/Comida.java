@@ -2,10 +2,12 @@ package br.edu.infnet.model.domain;
 
 import br.edu.infnet.model.exceptions.PesoNegativoException;
 
+import java.util.Arrays;
+
 public class Comida extends Produto{
-    private double pesoEmKg;
-    private boolean vegano;
-    private String[] ingredientes;
+    private final double pesoEmKg;
+    private final boolean vegano;
+    private final String[] ingredientes;
 
     public Comida(String nome, double valor, int codigo, double pesoEmKg, boolean vegano, String[] ingredientes) throws PesoNegativoException {
         super(nome, valor, codigo);
@@ -45,7 +47,7 @@ public class Comida extends Produto{
         return "Comida{" +
                 "peso=" + pesoEmKg +
                 ", vegano=" + vegano +
-                ", ingredientes='" + ingredientes + '\'' +
+                ", ingredientes='" + Arrays.toString(ingredientes) + '\'' +
                 '}';
     }
 }

@@ -1,6 +1,5 @@
 import br.edu.infnet.model.domain.Comida;
 import br.edu.infnet.model.exceptions.PesoNegativoException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
