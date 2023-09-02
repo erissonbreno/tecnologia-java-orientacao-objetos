@@ -12,8 +12,8 @@ public class Sobremesa extends Produto {
     public Sobremesa(String nome, double valor, int codigo, int quantidade, boolean doce, Set<String> informacao) throws QuantidadeSobremesaZeroException {
         super(nome, valor, codigo);
 
-        if(quantidade == 0) {
-            throw new QuantidadeSobremesaZeroException("A quantidade de sobremesa não pode ser 0");
+        if (quantidade == 0) {
+            throw new QuantidadeSobremesaZeroException("A quantidade de sobremesa nao pode ser 0");
         }
 
         this.quantidade = quantidade;
@@ -48,7 +48,7 @@ public class Sobremesa extends Produto {
     @Override
     public double calculaDesconto() {
         if (getQuantidade() >= 2) {
-            return getValor() * 0.05;
+            return (getValor() * getQuantidade()) * 0.05;
         }
         return 0;
     }
