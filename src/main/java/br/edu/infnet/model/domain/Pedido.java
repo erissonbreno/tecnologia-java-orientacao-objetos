@@ -16,6 +16,15 @@ public class Pedido {
         this.tipoEntrega = tipoEntrega;
         this.app = app;
         this.cliente = cliente;
+
+        if(app) {
+            setTipoEntrega(TipoEntrega.RAPIDA);
+        }
+    }
+
+
+    public void setTipoEntrega(TipoEntrega tipoEntrega) {
+        this.tipoEntrega = tipoEntrega;
     }
 
     public List<Produto> getProdutos() {
@@ -44,7 +53,7 @@ public class Pedido {
                 .sum() + calcularTaxaEntrega();
     }
 
-    private double calcularTaxaEntrega() {
+    public double calcularTaxaEntrega() {
         if (isApp()) {
             this.tipoEntrega = TipoEntrega.RAPIDA;
         } else {
