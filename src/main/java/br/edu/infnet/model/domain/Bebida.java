@@ -32,28 +32,8 @@ public class Bebida extends Produto{
         return getValor() - calculaDesconto();
     }
 
-    public boolean isGelada() {
-        return gelada;
-    }
-
-    public void setGelada(boolean gelada) {
-        this.gelada = gelada;
-    }
-
     public TamanhoBebida getTamanho() {
         return tamanho;
-    }
-
-    public void setTamanho(TamanhoBebida tamanho) {
-        this.tamanho = tamanho;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     @Override

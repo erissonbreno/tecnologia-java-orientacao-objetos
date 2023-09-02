@@ -4,8 +4,10 @@ import br.edu.infnet.model.domain.*;
 import br.edu.infnet.model.enums.TamanhoBebida;
 import br.edu.infnet.model.enums.TipoEntrega;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -57,5 +59,5 @@ public class Main {
         System.out.println(pedidoSoBebida);
         System.out.println(pedidoCompletoEntregaRapida);
         System.out.println(pedidoCompletoEntregaNormal);
-        }
+    }
 }

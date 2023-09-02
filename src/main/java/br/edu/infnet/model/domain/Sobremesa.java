@@ -25,26 +25,6 @@ public class Sobremesa extends Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public boolean isDoce() {
-        return doce;
-    }
-
-    public void setDoce(boolean doce) {
-        this.doce = doce;
-    }
-
-    public Set<String> getInformacao() {
-        return informacao;
-    }
-
-    public void setInformacao(Set<String> informacao) {
-        this.informacao = informacao;
-    }
-
     @Override
     public double calculaDesconto() {
         if (getQuantidade() >= 2) {

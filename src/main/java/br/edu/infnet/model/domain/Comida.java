@@ -23,24 +23,8 @@ public class Comida extends Produto{
         return pesoEmKg;
     }
 
-    public void setPesoEmKg(double pesoEmKg) {
-        this.pesoEmKg = pesoEmKg;
-    }
-
     public boolean isVegano() {
         return vegano;
-    }
-
-    public void setVegano(boolean vegano) {
-        this.vegano = vegano;
-    }
-
-    public String[] getIngredientes() {
-        return ingredientes;
-    }
-
-    public void setIngredientes(String[] ingredientes) {
-        this.ingredientes = ingredientes;
     }
 
     @Override

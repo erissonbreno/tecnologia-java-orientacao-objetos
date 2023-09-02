@@ -31,20 +31,12 @@ public class Pedido {
         return produtos;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
     public TipoEntrega getTipoEntrega() {
         return tipoEntrega;
     }
 
     public boolean isApp() {
         return app;
-    }
-
-    public void setApp(boolean app) {
-        this.app = app;
     }
 
     public double calcularValorPedido() {
