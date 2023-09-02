@@ -46,7 +46,7 @@ public class Comida extends Produto{
     @Override
     public double calculaDesconto() {
         if(isVegano() && getPesoEmKg() >= 1) {
-            return getValor() * 0.2;
+            return (getValor() * getPesoEmKg()) * 0.2;
         }
         return 0;
     }
